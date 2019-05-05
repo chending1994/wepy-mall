@@ -1,0 +1,15 @@
+<template>
+  <view>We view</view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class We extends wepy.page{
+
+  };
+</script>
+
+<style>
+
+</style>

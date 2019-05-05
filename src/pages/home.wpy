@@ -1,0 +1,85 @@
+<template>
+  <view>
+    <view class="search-wrap">
+      <view class="search-input">
+        <image src='/image/images/icon_search@2x.png' />
+        <text>搜索</text>
+      </view>
+    </view>
+    <view>
+      <swiper
+        indicator-dots
+        indicator-active-color="#fff"
+        autoplay
+        interval="2500"
+        circular
+        indicator-color="rgba(255, 255, 255, .3)">
+        <swiper-item>
+          <image mode="widthFix" src="/image/upload/banner1.png" class="swiper-item-img" />
+        </swiper-item>
+        <swiper-item>
+          <image mode="widthFix" src="/image/upload/banner2.png" class="swiper-item-img" />
+        </swiper-item>
+        <swiper-item>
+          <image mode="widthFix" src="/image/upload/banner3.png" class="swiper-item-img" />
+        </swiper-item>
+      </swiper>
+    </view>
+    <view wx:for="{{ swiperData }}" wx:key="{{ item.image_src }}">
+      <view>{{ item.image_src }}</view>
+      <view>{{ item.navigator_url }}</view>
+    </view>
+    {{ sleepTime }}
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import { getSwaiperData } from  '../api/home'
+  export default class Home extends wepy.page{
+    onLoad() {
+      this.loadSwiper()
+      this.loadTime()
+    }
+    data = {
+      swiperData: [],
+      sleepTime: 1
+    }
+
+    async loadSwiper() {
+      this.swiperData = await getSwaiperData();
+      // this.$apply()
+    }
+    loadTime() {
+      setTimeout(()=> {
+        this.sleepTime = 3
+        this.$apply()
+      },3000)
+    }
+  };
+</script>
+
+<style>
+.search-wrap {
+  background: #ff2d4a;
+  padding: 20rpx 16rpx;
+}
+.search-input {
+  height: 60rpx;
+  background: #fff;
+  border-radius: 4rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #bbb;
+}
+.search-input image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 16rpx;
+}
+.swiper-item-img {
+  width: 100%;
+}
+</style>

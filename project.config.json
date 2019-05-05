@@ -1,0 +1,19 @@
+{
+	"description": "A WePY project",
+	"setting": {
+		"urlCheck": false,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true,
+		"uglifyFileName": true,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"appid": "wxa095295c24084a83",
+	"projectname": "wepy-mall",
+	"miniprogramRoot": "dist/",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {}
+}

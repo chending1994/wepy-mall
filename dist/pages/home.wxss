@@ -1,0 +1,23 @@
+
+.search-wrap {
+  background: #ff2d4a;
+  padding: 20rpx 16rpx;
+}
+.search-input {
+  height: 60rpx;
+  background: #fff;
+  border-radius: 4rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #bbb;
+}
+.search-input image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 16rpx;
+}
+.swiper-item-img {
+  width: 100%;
+}
